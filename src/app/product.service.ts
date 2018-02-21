@@ -9,6 +9,7 @@ export class ProductService {
   constructor(private _http: Http) { }
 
   getAlbum(id: number){
-    this._http.get(this._albumUrl).map((resp: Response) => resp.json())
+    return this._http.get(this._albumUrl)
+      .map((resp: Response) => resp.json());
   }
 }
